@@ -10,7 +10,7 @@ const App = () => {
   return (
     <React.StrictMode>
       <Header />
-      <Content/>
+      <Content />
     </React.StrictMode>
   );
 }
