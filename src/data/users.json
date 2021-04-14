@@ -1,4 +1,4 @@
-[
+{"users": [
     {
         "id": 33,
         "username": "Dawson.Wunsch",
@@ -3838,4 +3838,4 @@
             }
         ]
     }
-]
+]}
