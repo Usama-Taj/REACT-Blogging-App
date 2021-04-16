@@ -1,7 +1,8 @@
 import {Nav, Navbar, NavbarBrand, Image} from 'react-bootstrap';
+
 import profileImage from './images/user.png';
 const Header = () => {
-  return ( 
+  return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <NavbarBrand href="\#">Blogging App</NavbarBrand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -14,6 +15,7 @@ const Header = () => {
             <Image src={profileImage} width="30" roundedCircle />
           </Nav.Link>
         </Nav>
+          
       </Navbar.Collapse>
     </Navbar>
   );
