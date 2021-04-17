@@ -5,13 +5,25 @@ import SignUp from "./SignUp";
 import './style/style.css';
 
 const Welcome = () => {
+  const credentialSelection = (e) => {
+    if (e.target.textContent === 'Login' && (!e.target.classList.contains('active'))
+    ) {
+      e.target.classList.add('active');
+      document.getElementById('signup').classList.remove('active');
+    }
+    else if(e.target.textContent === 'Sign Up' && (!e.target.classList.contains('active')))
+    {
+      e.target.classList.add('active');
+      document.getElementById('login').classList.remove('active');
+    }
+  }
   return (
     <Router>
       <Container fluid>
         <Row>
           <Col id="welcome" md="6">
-            <h1 class="my-text-one center"><b>Welcome to My Blogging App</b></h1>
-            <h4 class="my-text-two center">
+            <h1 className="my-text-one center"><b>Welcome to My Blogging App</b></h1>
+            <h4 className="my-text-two center">
               <b>
                 Hello Everyone, This app is created for people who wants to write blogs and share them with other people on this platform. This app is just for practice purposes. It is not suitable for deployement and running in the production environment.
               </b>
@@ -20,12 +32,12 @@ const Welcome = () => {
           <Col md="6">
             <Card>
               <Card.Header>
-                <Nav variant="tabs" defaultActiveKey="#login">
+                <Nav variant="tabs">
                   <Nav.Item>
-                      <Link className="nav-link active"  to="/login">Login</Link>
+                      <Link className="nav-link active" id="login"  to="/login" onClick={(e)=>credentialSelection(e)}>Login</Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Link className="nav-link" to="/signup">Sign Up</Link>
+                    <Link className="nav-link" id="signup" to="/signup" onClick={(e)=>credentialSelection(e)}>Sign Up</Link>
                   </Nav.Item>
                 </Nav>
               </Card.Header>
