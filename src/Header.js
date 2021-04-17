@@ -1,6 +1,7 @@
 import {Nav, Navbar, NavbarBrand, Image} from 'react-bootstrap';
-
+import {Link} from 'react-router-dom';
 import profileImage from './images/user.png';
+
 const Header = () => {
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -8,12 +9,12 @@ const Header = () => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto">
-          <Nav.Link href="\#">Home</Nav.Link>
-          <Nav.Link href="\#1">Notifications</Nav.Link>
-          <Nav.Link href="\#2">Log Out</Nav.Link>
-          <Nav.Link href="\#3">
+          <Link className="nav-link" to="/">Home</Link>
+          <Link className="nav-link" to="/newblog">Add New Blog</Link>
+          <Link className="nav-link" to="/">Log Out</Link>
+          <Link className="nav-link" to="/">
             <Image src={profileImage} width="30" roundedCircle />
-          </Nav.Link>
+          </Link>
         </Nav>
           
       </Navbar.Collapse>
