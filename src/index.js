@@ -9,20 +9,28 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NewBlog from "./NewBlog";
 import Welcome from "./Welcome";
 
-const App = () => {
-  return (
-    <div>
-      <Router>
-        <Header />
-        <React.StrictMode>
-          <Switch>
-            <Route path="/home" exact component={Content} />
-            <Route path="/newblog" exact component={NewBlog} />
-            <Route path="/" exact component={Welcome} />
-          </Switch>
-        </React.StrictMode>
-      </Router>
-    </div>
-  );
-};
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  render() {
+    return (
+      <div>
+        <Router>
+          <Header />
+          <React.StrictMode>
+            <Switch>
+              <Route path="/home" exact component={Content} />
+              <Route path="/newblog" exact component={NewBlog} />
+              <Route path="/" exact component={Welcome} />
+            </Switch>
+          </React.StrictMode>
+        </Router>
+      </div>
+    );
+  }
+}
+
+export default App;
 ReactDOM.render(<App />, document.getElementById("root"));

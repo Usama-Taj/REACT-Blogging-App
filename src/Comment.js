@@ -1,21 +1,28 @@
 import { Card } from "react-bootstrap";
+import React from "react";
 
-const Comment = ({ comment }) => {
-  return (
-    <Card className="border rounded p-2 my-3">
-      <Card.Title>
-        <h4>{comment.title}</h4>
-        <small className="ml-3">
-          <b>Pub Date:</b> {comment.pub_date}
-        </small>
-        <br />
-        <small className="ml-3">
-          <b>By:</b> {comment.author}
-        </small>
-      </Card.Title>
-      <Card.Text>{comment.body}</Card.Text>
-    </Card>
-  );
-};
+class Comment extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  render() {
+    return (
+      <Card className="border rounded p-2 my-3">
+        <Card.Title>
+          <h4>{this.props.comment.title}</h4>
+          <small className="ml-3">
+            <b>Pub Date:</b> {this.props.comment.pub_date}
+          </small>
+          <br />
+          <small className="ml-3">
+            <b>By:</b> {this.props.comment.author}
+          </small>
+        </Card.Title>
+        <Card.Text>{this.props.comment.body}</Card.Text>
+      </Card>
+    );
+  }
+}
 
 export default Comment;
