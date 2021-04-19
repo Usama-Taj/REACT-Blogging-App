@@ -1,8 +1,8 @@
 import { Button, Form } from "react-bootstrap";
 
 const Login = () => {
-  return ( 
-    <Form>
+  return (
+    <Form id="login">
       <Form.Group>
         <Form.Label>Username: </Form.Label>
         <Form.Control type="text" placeholder="Enter Username" />
@@ -11,9 +11,11 @@ const Login = () => {
         <Form.Label>Password: </Form.Label>
         <Form.Control type="password" placeholder="Enter Password" />
       </Form.Group>
-      <Button type="submit" variant="dark" className="w-100">Login</Button>
+      <Button type="submit" variant="dark" className="w-100">
+        Login
+      </Button>
     </Form>
   );
-}
- 
+};
+
 export default Login;
